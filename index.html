@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+    <canvas id="chart" style="width:100%;max-width:600px"></canvas>
+    <style>
+        body {
+            background-color: black;
+        }
+        #chart {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin: auto;
+            width: 50%;
+            border: 3px solid rgb(106, 97, 94);
+            padding: 10px;
+        }
+    </style>
+    <script>
+        var xValues = [1, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+        var reddata = [];
+        var greendata = [];
+        var bluendata = [];
+        var chartRandom = new Chart("chart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    data: reddata,
+                    borderColor: "red",
+                    fill: false
+                }, {
+                    data: greendata,
+                    borderColor: "green",
+                    fill: false
+                }, {
+                    data: bluendata,
+                    borderColor: "blue",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: { display: false }
+            }
+        });
+
+        function updade() {
+            chartRandom.data.datasets[0].data[0] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[1] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[2] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[3] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[4] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[5] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[6] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[7] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[8] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[0].data[9] = Math.floor(Math.random() * 900);
+
+            chartRandom.data.datasets[1].data[0] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[1] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[2] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[3] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[4] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[5] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[6] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[7] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[8] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[1].data[9] = Math.floor(Math.random() * 900);
+
+            chartRandom.data.datasets[2].data[0] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[1] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[2] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[3] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[4] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[5] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[6] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[7] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[8] = Math.floor(Math.random() * 900);
+            chartRandom.data.datasets[2].data[9] = Math.floor(Math.random() * 900);
+            chartRandom.update();
+        }
+        setInterval(updade, 300);
+
+    </script>
